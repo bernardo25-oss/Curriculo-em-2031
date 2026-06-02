@@ -1,0 +1,184 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Template: Curriculum Vitae
+%
+% Source: http://www.howtotex.com/
+% Feel free to distribute this template, but please keep the
+% referal to HowToTeX.com.
+% Date: July 2011
+%Version for spanish users, by dgarhdez
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% How to use writeLaTeX: 
+%
+% You edit the source code here on the left, and the preview on the
+% right shows you the result within a few seconds.
+%
+% Bookmark this page and share the URL with your co-authors. They can
+% edit at the same time!
+%
+% You can upload figures, bibliographies, custom classes and
+% styles using the files menu.
+%
+% If you're new to LaTeX, the wikibook is a great place to start:
+% http://en.wikibooks.org/wiki/LaTeX
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[paper=a4,fontsize=11pt]{scrartcl} % KOMA-article class
+							
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage{geometry}
+	\textheight=700px                    % Saving trees ;-)
+\usepackage{url}
+
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
+
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}
+
+\sectionfont{%			            % Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
+	\sectionrule{0pt}{0pt}{-5pt}{1pt}}
+
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}			% Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
+
+\newcommand{\MyName}[1]{ % Name
+		\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
+		\par \normalsize \normalfont}
+		
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+		\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+		\par \normalsize \normalfont}
+
+\newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
+
+\newcommand{\PersonalEntry}[2]{
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}		       % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value
+
+\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}			   % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value	
+		
+\newcommand{\EducationEntry}[4]{
+		\noindent \textbf{#1} \hfill      % Study
+		\colorbox{White}{%
+			\parbox{5cm}{%
+			\hfill\color{Black}#2}} \par  % Duration
+		\noindent \textit{#3} \par        % School
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+\newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
+		\noindent \textbf{#1} \hfill      % Jobname
+		\noindent\colorbox{Black}{\color{White}#2} \par  % Duration
+		\noindent \textit{#3} \par              % Company
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+%%% Begin Document
+%%% ------------------------------------------------------------
+\begin{document}
+% you can upload a photo and include it here...
+%\begin{wrapfigure}{l}{0.5\textwidth}
+%	\vspace*{-2em}
+%		\includegraphics[width=0.15\textwidth]{photo}
+%\end{wrapfigure}
+
+\MyName{Bernardo Crespel}
+\MySlogan{Astronomia }
+
+\sepspace
+
+%%% Personal details
+%%% ------------------------------------------------------------
+\NewPart{Dados pessoais}{}
+
+\PersonalEntry{Nascimento}{6 de novembro de 2006}
+%\PersonalEntry{Address}{111 First St, New York}
+\PersonalEntry{Telefone}{(+24) 98828 7930}
+\PersonalEntry{E--Mail}{\url{bernardo25@ov.ufrj.br}}
+
+%%% Education
+%%% ------------------------------------------------------------
+\NewPart{Educação}{}
+
+\EducationEntry{Conclusão do ensino médio} {2022 - 2024} 
+{Colegio Apogeu São Tomas de Aquino}
+
+\EducationEntry{Ingresso Curso de Astronomia}{2025.1}{Universidade Federal do Rio de Janeiro}{
+
+\begin{itemize}
+\item{Areá de interesse: Cosmologia, Astrofísica Extragalática.}
+\item{Discplinas concluídas no Obeservatório do Valongo: Introdução a astronomia, Astronomia Esférica.}
+\item{Disciplinas concluídas no IF e IM da UFRJ: 
+Cálculo 1 e 2, Algebra Linar, Física experimental 1, Computação.}
+\end{itemize}
+}
+
+\sepspace
+
+\EducationEntry{Projetos de extensão / Iniciação científica}{ 2025.2 - Atualemente}{Observatório do Valongo}
+\setlength{\parskip}
+{Projeto Valongo de portas abertas: Convida o público a um tour museológico nos acervos do observátorio do Valongo. Com boas condições climáticas, também ocorre uma seção de observação nortuna dos astros dentro do campo, utilizando de teléscópios disponibilizados pelo Observatório.}
+
+%%% Work experience
+%%% ------------------------------------------------------------
+\NewPart{Experiência de trabalho}{}
+
+\EducationEntry{Jovem aprendiz}{2024 - 2025 }{Eletrônicas França}{
+\begin{itemize}
+\item{Venda comercial.}
+\item{Gestor de Mídias Sociais.}
+\item{Gestor de Vendas Online.}
+\end{itemize}
+}
+\sepspace
+
+\EducationEntry{Reforço Escolar} { 2025 - Atual}
+{Aulas online para crianças, adolescente e adultos. }{ 
+\begin{itemize}
+\item{Aulas de reforço sobre matemática.}
+\item{Aulas de reforço sobre física.}
+\item{Preparação para vestibular.}
+}
+
+%%% Skills
+%%% ------------------------------------------------------------
+\NewPart{Habilidades Pessoais}{}
+
+\SkillsEntry{Idiomas}{Portugûesl: Nativo.}
+\SkillsEntry{}{Inglés: Lê bem, entende bem, fala pouco, escreve pouco.}
+\SkillsEntry{}{Espanhol: Lê bem, entende bem, fala pouco, escreve pouco.}
+\vspace{0.7cm}
+\SkillsEntry{Ferramentas}{Excel, PowerPoint, SAO Image DS9.}
+\vspace{0,7cm}
+\SkillsEntry{Habilidades Interpessoais}{}
+\SkillsEntry{}{Dedicação exclusiva para o estudo da Astronomia.}
+\SkillsEntry{}{Flexível e acostumado com mudanças.}
+\SkillsEntry{}{Familiarizado com Gestão de Grupos.}
+\SkillsEntry{}{Boa capacidade de comunicação.}
+%\SkillsEntry{}{}
+
+
+
+
+%%% References
+%%% ------------------------------------------------------------
+%\NewPart{References}{}
+%Available upon request
+\end{document}
